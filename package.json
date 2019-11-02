@@ -3,6 +3,7 @@
     "displayName": "ESPArto Snippets",
     "description": "Snippets for ESPArto framework - ESP8266",
     "version": "0.0.1",
+	"publisher": "HamzaHaj",
     "engines": {
         "vscode": "^1.39.0"
     },
@@ -16,5 +17,9 @@
                 "path": "./snippets/snippets.json"
             }
         ]
-    }
+    },
+	  "repository": {
+    "type": "git",
+    "url": "https://github.com/HamzaHajeir/Esparto-snippets-VSCode"
+	}
 }
