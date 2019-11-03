@@ -11,7 +11,7 @@ Auto-completion code and ready-snippets to work with esparto functions and their
 
 Also supports esparto callback function types
 
-![Auto-completion code](images/Extension.gif)
+![Auto-completion code](images/EspartoSnippet.gif)
 
 
 
@@ -30,3 +30,6 @@ Add ESPArto framework :
 
 Initial release of Esparto snippets for vscode.
 
+### 0.1.0
+
+Fixed sv and vf indentions, Adds more explainatios by responsed comments.

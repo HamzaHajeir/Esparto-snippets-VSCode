@@ -1,17 +1,17 @@
 {	
 	"Debounced": {
 		"prefix": ["debounced", "Debounced", "db"],
-		"body": "Esparto.Debounced(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},\n\t$0\n)",
+		"body": "Esparto.Debounced(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},//Debounce time in ${3:15} ms\n\t$0\n)",
 		"description": "Debounced function"
 	},
 	"CircularLatch":{
 		"prefix": ["circular","Circular","CircularLatch"],
-		"body": "Esparto.CircularLatch(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},\n\t&{4,3},\n\t$0\n)",
+		"body": "Esparto.CircularLatch(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},//Debounce time in ${3:15} ms\n\t&{4,3},\n\t$0\n)",
 		"description": "CircularLatch function"
 	},
 	"CountingLatch":{
 		"prefix": ["CountingLatch","countingLatch","Counting"],
-		"body": "Esparto.CountingLatch(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},\n\t$0\n)",
+		"body": "Esparto.CountingLatch(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},//Debounce time in ${3:15} ms\n\t$0\n)",
 		"description": "CountingLatch function"
 	},
 	"Encoder":{
@@ -21,32 +21,32 @@
 	},
 	"EncoderAuto":{
 		"prefix": ["EncoderAuto","ea","encoder-auto"],
-		"body": "Esparto.EncoderAuto(${1:pinA},\n\t${2:pinB},\n\t${3|INPUT,INPUT_PULLUP|},\n\t$0,\n\t${4,0},\n\t${5,100},\n\t${6,1},\n\t${7,50}\n)",
+		"body": "Esparto.EncoderAuto(${1:pinA},\n\t${2:pinB},\n\t${3|INPUT,INPUT_PULLUP|},\n\t$0,\n\t${4,0},//Minimum value\n\t${5,100},//Maximum value\n\t${6,1},//Increment/decrement step\n\t${7,50}//Initial value\n)",
 		"description" : "EncoderAuto function"
 	},
 	"Filtered":{
 		"prefix": ["Filtered","filtered"],
-		"body": "Esparto.Filtered(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:HIGH},\n\t$0\n)",
+		"body": "Esparto.Filtered(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:HIGH},//Active ${3:HIGH}\n\t$0\n)",
 		"description": "Filtered function"
 	},
 	"Latching" : {
 		"prefix": ["Latching","latching"],
-		"body": "Esparto.Latching(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},\n\t$0\n)",
+		"body": "Esparto.Latching(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},//Debounce time in ${3:15} ms\n\t$0\n)",
 		"description": "Latching function"
 	},
 	"MultiStage" : {
 		"prefix": ["MultiStage","Multi-Stage","stage"],
-		"body": ["Esparto.MultiStage(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},\n\t${4:100},\n\t${5:progress},\n\t{\n\t\t{${6:1000},${7:shorty}},\n\t\t{${8:3000},${9:mediumy}},\n\t\t{${10:5000},${11:lengthy}},\n\t\t{${12:0},${0:after}}\n\t}\n)"],
+		"body": ["Esparto.MultiStage(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},//Debounce time in ${3:15} ms\n\t${4:100},//notify every 100ms\n\t${5:progress},//Function called whenever a stage limit has passed\n\t{\n\t\t{${6:1000},${7:shorty}},//any press less than ${6:1000} ms: calls 'shorty' function\n\t\t{${8:3000},${9:mediumy}},//up-to ${8:3000} ms: calls 'mediumy'\n\t\t{${10:5000},${11:lengthy}},//up to ${10:5000} ms: call 'lengthy'\n\t\t{${12:0},${0:after}}//Any press longer : calls 'after'.\n\t}\n)"],
 		"description": "MultiStage function"
 	},
 	"Output":{
 		"prefix": ["Output","output"],
-		"body": "Esparto.Output(${1:pin},\n\t${2:HIGH},\n\t${3:OFF},\n\t$0\n)",
+		"body": "Esparto.Output(${1:pin},\n\t${2:HIGH},//Active ${2:HIGH}\n\t${3:OFF},//Starts in ${3:OFF} state\n\t$0\n)",
 		"description": "Esparto Output function"
 	},
 	"Polled": {
 		"prefix": "Polled",
-		"body": "Esparto.Polled(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:60000},//OneMinute\n\t$0,\n\t${4:false},//analog=true\n)",
+		"body": "Esparto.Polled(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:60000},//OneMinute\n\t$0,\n\t${4:false},//analog pin = ${4:false}\n)",
 		"description": "Esparto Polled function"	
 	},
 	"Raw":{
@@ -56,17 +56,17 @@
 	},
 	"Reporting":{
 		"prefix": "Reporting",
-		"body": "Esparto.Reporting(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},\n\t${4:1000},\n\t$0,\n\t${5:false},//both states : true\n)",
+		"body": "Esparto.Reporting(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},//Debounce time in ${3:15} ms\n\t${4:1000},\n\t ${3:15}$0,\n\t${5:false},//report for both states : ${5:false}\n)",
 		"description": "Esparto Reporting function"
 	},
 	"Retriggering": {
 		"prefix": "Retriggering",
-		"body": "Esparto.Retriggering(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:10000},//timeout\n\t$0,\n\t${4:HIGH},//active high\n)",
+		"body": "Esparto.Retriggering(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:10000},//timeout\n\t$0,\n\t${4:HIGH},//Active ${4:HIGH}\n)",
 		"description": "Esparto Retriggering function"
 	},
 	"Timed" : {
 		"prefix": "Timed",
-		"body": "Esparto.Timed(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},\n\t$0,\n\t${5:false},//both states : true\n)",
+		"body": "Esparto.Timed(${1:pin},\n\t${2|INPUT,INPUT_PULLUP|},\n\t${3:15},//Debounce time in ${3:15} ms\n\t$0,\n\t${5:false},//callback for both states : ${5:false}\n)",
 		"description": "Esparto Timed function"
 	},
 
@@ -85,12 +85,12 @@
 	},
 	"Esparto every" :{
 		"prefix": "every",
-		"body": "Esparto.every(${1:1000},\n\t$0\n)",
+		"body": "Esparto.every(${1:1000},//call below void function every ${1:1000} ms\n\t$0\n)",
 		"description": "Esparto every function"
 	},
 	"Esparto everyRandom" : {
 		"prefix": ["everyRandom","er"],
-		"body": "Esparto.everyRandom(${1:1000},\n\t${2:2000},\n\t$0\n)",
+		"body": "Esparto.everyRandom(${1:1000},//Random minimum time\n\t${2:2000},//Random maximum time\n\t$0\n)",
 		"description": "Esparto everyRandom function"
 	},
 	"Esparto nTimes" : {
@@ -105,27 +105,27 @@
 	},
 	"Esparto once" :{
 		"prefix": "once",
-		"body": "Esparto.once(${1:1000},\n\t$0\n)",
+		"body": "Esparto.once(${1:1000},call below function once after ${1:1000} ms\n\t$0\n)",
 		"description": "Esparto once function"
 	},
 	"Esparto onceRandom" : {
 		"prefix": "onceRandom",
-		"body": "Esparto.onceRandom(${1:1000},//Rmin in ms\n\t${2:2000},//Rmax in ms\n\t$0\n)",
+		"body": "Esparto.onceRandom(${1:1000},//Random minimum in ms\n\t${2:2000},//Rmax in ms\n\t$0\n)",
 		"description": "Esparto onceRandom function"
 	},
 	"Esparto randomTimes" : {
 		"prefix": "randomTimes",
-		"body": "Esparto.randomTimes(${1:2},//Nmin\n\t${2:5},//Nmax\n\t${3:1500},$0\n)",
+		"body": "Esparto.randomTimes(${1:2},//Nmin times\n\t${2:5},//Nmax times\n\t${3:1500},$0\n)",
 		"description": "Esparto randomTimes function"
 	},
 	"Esparto randomTimesRandom" :{
 		"prefix": "randomTimesRandom",
-		"body": "Esparto.randomTimesRandom(${1:2},//Nmin\n\t${2:5},//Nmax\n\t${3:500},//Minimum interval time in ms\n\t${4:1500},//Maximum interval time in ms\n\t$0\n)",
+		"body": "Esparto.randomTimesRandom(${1:2},//Nmin times\n\t${2:5},//Nmax times\n\t${3:500},//Minimum random interval time in ms\n\t${4:1500},//Maximum random interval time in ms\n\t$0\n)",
 		"description": "Esparto randomTimesRandom function"
 	},
 	"Esparto repeatWhile" : {
 		"prefix": ["repeatWhile","while"],
-		"body": "Esparto.repeatWhile($1,//Condition function returns a bool (or int)\n\t${2:1000},//repeat next function every 1s\n\t$3,//Function to be repeated (void function(void))\n\t$0  //Lift off Function (after the condition returns false)\n)",
+		"body": "Esparto.repeatWhile($1,//Condition function returns a bool\n\t${2:1000},//repeat next function every ${2:1000} ms\n\t$3,//Function to be repeated (void function(void))\n\t${0:nullptr}  //Lift off Function (after the condition returns false)\n)",
 		"description": "Esparto repeatWhile function"
 	}
 	
@@ -139,13 +139,13 @@
 	},
 	"Esparto Void Function" :{
 		"prefix": ["void function","vf"],
-		"body": "[](){\n\t\t$0\n\t}",
+		"body": "[](){\n\t$0\n}",
 		"description": "Esparto void Function"
 
 	},
 	"Esparto SV  Function": {
 		"prefix": ["sv","sv function"],
-		"body": "[](int i1, int i2){\n\t\t$0\n\t}",
+		"body": "[](int i1, int i2){\n\t$0\n}",
 		"description": "Esparto int params Function"
 	}
 	

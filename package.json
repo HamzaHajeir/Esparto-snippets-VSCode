@@ -2,7 +2,7 @@
     "name": "esparto-snippets",
     "displayName": "ESPArto Snippets",
     "description": "Snippets for ESPArto framework - ESP8266",
-    "version": "0.0.1",
+    "version": "0.1.0",
 	"publisher": "HamzaHaj",
     "engines": {
         "vscode": "^1.39.0"
