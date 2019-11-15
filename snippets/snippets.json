@@ -105,7 +105,7 @@
 	},
 	"Esparto once" :{
 		"prefix": "once",
-		"body": "Esparto.once(${1:1000},call below function once after ${1:1000} ms\n\t$0\n)",
+		"body": "Esparto.once(${1:1000},//call below function once after ${1:1000} ms\n\t$0\n)",
 		"description": "Esparto once function"
 	},
 	"Esparto onceRandom" : {
